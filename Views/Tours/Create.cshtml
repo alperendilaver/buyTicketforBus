@@ -1,0 +1,36 @@
+@model CreateTourViewModel
+ 
+<form asp-action="Create" asp-controller="Tours" method="post">
+    <div class="mb-3">
+        <label  class="form-label" asp-for="firstStation">Başlangıç Durağı</label>
+        <input type="text" class="form-control" asp-for="firstStation">
+    </div>
+    <div class="mb-3">
+        <label  class="form-label" asp-for="finishStation">Başlangıç Durağı</label>
+        <input type="text" class="form-control" asp-for="finishStation">
+    </div>
+    <div class="mb-3">
+        <label  class="form-label" asp-for="departureDate">Tarih (gg/aa/yyyy hh/mm)</label>
+        <input type="text" class="form-control" asp-for="departureDate">    
+    </div>
+    <div class="mb-3">
+        <label  class="form-label" asp-for="busPlaka">Otobüs Plakası</label>
+        <input type="text" class="form-control" asp-for="busPlaka"> 
+    </div>
+    <div class="mb-3">
+        <label for="firstDriverId">1.Kaptanı Seçiniz</label>
+        <select asp-for="firstDriverId" asp-item="ViewBag.Drivers">
+            <option value="">Seciniz</option>
+        </select>
+    </div>
+    <div class="mb-3"><label for="secondDriverId">2.Kaptanı Seçiniz</label>
+        <select asp-for="secondDriverId" asp-item="ViewBag.Drivers">
+            <option value="">Seciniz</option>
+        </select></div>
+    <div class="mb-3">
+        <label for="firstDriverId">Hostu Seçiniz</label>
+        <select asp-for="hostId" asp-item="ViewBag.Hosts">
+            <option value="">Seciniz</option>
+        </select>
+    </div>
+</form>

@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using buyticketforbus.Repositories.Context;
 
@@ -10,9 +11,11 @@ using buyticketforbus.Repositories.Context;
 namespace buyticketforbus.Migrations
 {
     [DbContext(typeof(CombinedContext))]
-    partial class CombinedContextModelSnapshot : ModelSnapshot
+    [Migration("20240515204630_personelss")]
+    partial class personelss
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -275,7 +278,7 @@ namespace buyticketforbus.Migrations
 
                     b.Property<string>("GovernmentId")
                         .IsRequired()
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("longtext");
 
                     b.Property<int>("KoltukNo")
                         .HasColumnType("int");
@@ -300,9 +303,6 @@ namespace buyticketforbus.Migrations
 
                     b.HasKey("PassengerId");
 
-                    b.HasIndex("GovernmentId")
-                        .IsUnique();
-
                     b.ToTable("passengers");
                 });
 
@@ -321,7 +321,7 @@ namespace buyticketforbus.Migrations
 
                     b.Property<string>("GovernmentId")
                         .IsRequired()
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("longtext");
 
                     b.Property<bool>("Role")
                         .HasColumnType("tinyint(1)");
@@ -342,9 +342,6 @@ namespace buyticketforbus.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("PersonelId");
-
-                    b.HasIndex("GovernmentId")
-                        .IsUnique();
 
                     b.HasIndex("tourId");
 

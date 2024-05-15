@@ -1,0 +1,46 @@
+@model PersonelCreateViewModel
+<form asp-action="Create" asp-controller="Personels" method="post">
+    <div class="mb-3">
+        <label asp-for="FirstName" class="form-label">Ad</label>
+        <input type="text" class="form-control" asp-for="FirstName">
+    </div>
+      
+    <div class="mb-3">
+        <label asp-for="SurName" class="form-label">Soyad</label>
+        <input type="text" class="form-control" asp-for="SurName">
+    </div>
+
+
+    <div class="mb-3">
+        <label asp-for="GovernmentId" class="form-label">T.C Kimlik No</label>
+        <input type="text" class="form-control" asp-for="GovernmentId">
+    </div>
+
+
+    <div class="mb-3">
+      <label asp-for="Email" class="form-label">Email</label>
+      <input type="email" class="form-control" asp-for="Email" aria-describedby="emailHelp">
+      <div id="emailHelp" class="form-text">Bilgilerinizi kimseyle paylaşmayacağız</div>
+    </div>   
+    <div class="mb-3">
+      <label asp-for="PhoneNumber" class="form-label">Telefon Numarası</label>
+      <input type="text" class="form-control" asp-for="PhoneNumber">
+    </div>
+    <div class="mb-3">
+        <label asp-for="Gender" class="form-label">Cinsiyet</label>
+        <select asp-for="Gender" class="form-control">
+            <option value="true">Erkek</option>
+            <option value="false">Kadın</option>
+        </select>
+    </div>
+    
+    <div class="mb-3">
+        <label asp-for="Role" class="form-label">Role</label>
+        <select class="form-control" asp-for="Role">
+            <option value="true">Kaptan</option>
+            <option value="false">Host</option>
+        </select>
+    </div>
+  
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>

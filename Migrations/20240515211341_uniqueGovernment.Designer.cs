@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using buyticketforbus.Repositories.Context;
 
@@ -10,9 +11,11 @@ using buyticketforbus.Repositories.Context;
 namespace buyticketforbus.Migrations
 {
     [DbContext(typeof(CombinedContext))]
-    partial class CombinedContextModelSnapshot : ModelSnapshot
+    [Migration("20240515211341_uniqueGovernment")]
+    partial class uniqueGovernment
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

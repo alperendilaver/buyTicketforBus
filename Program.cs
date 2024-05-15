@@ -30,7 +30,7 @@ builder.Services.AddScoped<IMailService,EfEmailService>(i=>new EfEmailService(
     builder.Configuration["EmailSender:password"]
 
 ));
-
+builder.Services.AddScoped<IPersonelService,EfPersonelService>();
 builder.Services.AddScoped<IUserService,EfUserService>();
 builder.Services.AddScoped<ITourService,EfTourService>();
 builder.Services.AddScoped<IPassengerService,EfPassengerService>();

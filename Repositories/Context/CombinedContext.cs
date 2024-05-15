@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using buyticketforbus.Data;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace buyticketforbus.Repositories.Context
@@ -20,9 +21,7 @@ namespace buyticketforbus.Repositories.Context
         
         public DbSet<Passenger> passengers => Set<Passenger>();
         
-        public DbSet<Driver> drivers => Set<Driver>();
-        public DbSet<HostofBus> hosts => Set<HostofBus>();
-        
+        public DbSet<Personel> personels => Set<Personel>();    
         public DbSet<Station> stations => Set<Station>();
         
         public DbSet<Ticket> tickets => Set<Ticket>();

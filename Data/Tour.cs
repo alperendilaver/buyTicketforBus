@@ -21,8 +21,7 @@ namespace buyticketforbus.Data
     
         public Bus bus { get; set; } = null!;
 
-        public List<Driver> drivers { get; set; } = new List<Driver>();
+        public List<Personel> personels { get; set; } = new List<Personel>();
 
-        public HostofBus hostofBus{ get; set; } =null!;
-    }
+      }
 }

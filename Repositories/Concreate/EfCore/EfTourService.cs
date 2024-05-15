@@ -31,12 +31,12 @@ namespace buyticketforbus.Repositories.Concreate.EfCore
         }
 
 
-        public Driver GetDriverById(int id)
+        public Personel GetDriverById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public HostofBus GetHostofBusById(int id)
+        public Personel GetHostofBusById(int id)
         {
             throw new NotImplementedException();
         }
@@ -46,13 +46,13 @@ namespace buyticketforbus.Repositories.Concreate.EfCore
             throw new NotImplementedException();
         }
 
-        public async Task<IQueryable> drivers()
+        public async Task<List<Personel>> drivers()
         {
-            return await Task.FromResult(_context.drivers);
+            return await _context.personels.Where(r=>r.Role==true).ToListAsync();
         }
         public async Task<IQueryable> hosts()
         {
-            return await Task.FromResult(_context.hosts);
+            return await Task.FromResult(_context.personels.Where(r=>r.Role==false));
         }
 
         public async Task<IQueryable> tours()

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using buyticketforbus.Data;
@@ -15,10 +16,11 @@ namespace buyticketforbus.Models.TourViewModels
 
         public required string finishStation { get; set; } = null!;
 
-        public required string departureDate { get; set; }
+        public required DateTime departureDate { get; set; }
 
         public required string busPlaka { get; set; } = null!;
 
+        
         public required int firstDriverId { get; set; }
 
         public required int secondDriverId { get; set; }

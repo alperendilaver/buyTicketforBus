@@ -6,12 +6,12 @@
         <input type="text" class="form-control" asp-for="firstStation">
     </div>
     <div class="mb-3">
-        <label  class="form-label" asp-for="finishStation">Başlangıç Durağı</label>
+        <label  class="form-label" asp-for="finishStation">Bitiş Durağı</label>
         <input type="text" class="form-control" asp-for="finishStation">
     </div>
     <div class="mb-3">
         <label  class="form-label" asp-for="departureDate">Tarih (gg/aa/yyyy hh/mm)</label>
-        <input type="text" class="form-control" asp-for="departureDate">    
+        <input type="datetime-local" class="form-control" asp-for="departureDate">    
     </div>
     <div class="mb-3">
         <label  class="form-label" asp-for="busPlaka">Otobüs Plakası</label>
@@ -19,18 +19,21 @@
     </div>
     <div class="mb-3">
         <label for="firstDriverId">1.Kaptanı Seçiniz</label>
-        <select asp-for="firstDriverId" asp-item="ViewBag.Drivers">
+        <select asp-for="firstDriverId" asp-items="ViewBag.Drivers" class="form-control">
             <option value="">Seciniz</option>
         </select>
     </div>
     <div class="mb-3"><label for="secondDriverId">2.Kaptanı Seçiniz</label>
-        <select asp-for="secondDriverId" asp-item="ViewBag.Drivers">
+        <select asp-for="secondDriverId" asp-items="ViewBag.Drivers" class="form-control">
             <option value="">Seciniz</option>
         </select></div>
     <div class="mb-3">
         <label for="firstDriverId">Hostu Seçiniz</label>
-        <select asp-for="hostId" asp-item="ViewBag.Hosts">
+        <select asp-for="hostId" asp-items="ViewBag.Hosts" class="form-control">
             <option value="">Seciniz</option>
         </select>
+    </div>
+    <div class="mb-3">
+        <button type="submit" class="btn btn-primary">Kaydet</button>
     </div>
 </form>

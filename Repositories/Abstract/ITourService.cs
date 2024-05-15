@@ -12,9 +12,9 @@ namespace buyticketforbus.Repositories.Abstract
 
         Task<IQueryable> hosts();
         Task<IQueryable> tours();        
-        Task<IQueryable> drivers();
-        public Driver GetDriverById(int id);
-        public HostofBus GetHostofBusById(int id);
+        Task<List<Personel>> drivers();
+        public Personel GetDriverById(int id);
+        public Personel GetHostofBusById(int id);
         public void CreateTour(CreateTourViewModel model);
 
         public void DeleteTour(int id);

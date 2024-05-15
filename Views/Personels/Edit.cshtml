@@ -1,0 +1,27 @@
+@model PersonelUpdateViewModel
+<form asp-action="Edit" asp-controller="Personels" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="mb-3">
+        <label asp-for="FirstName" class="form-label">Ad</label>
+        <input type="text" class="form-control" asp-for="FirstName" value="@Model.FirstName">
+    </div>
+    
+    <input type="hidden" asp-for="GovernmentId" value="@Model.GovernmentId">
+    
+    <div class="mb-3">
+        <label asp-for="SurName" class="form-label">Soyad</label>
+        <input type="text" class="form-control" asp-for="SurName" value="@Model.SurName">
+    </div>
+
+    <div class="mb-3">
+      <label asp-for="Email" class="form-label">Email</label>
+      <input type="email" class="form-control" asp-for="Email" aria-describedby="emailHelp" value="@Model.Email">
+      <div id="emailHelp" class="form-text">Bilgilerinizi kimseyle paylaşmayacağız</div>
+    </div>   
+    <div class="mb-3">
+      <label asp-for="PhoneNumber" class="form-label">Telefon Numarası</label>
+      <input type="text" class="form-control" asp-for="PhoneNumber" value="@Model.PhoneNumber"> 
+    </div>
+  
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
